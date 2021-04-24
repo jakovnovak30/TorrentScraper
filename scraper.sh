@@ -17,6 +17,6 @@ for LINE in $STRANICA
 		REZULTAT="$(echo $LINE | grep -Eo '/torrent/[a-zA-Z0-9#~.*,/!?=+&_%:-]*')"
 		if [ ! -z $REZULTAT ]
 			then
-				echo https://rarbg.unblockninja.com/$REZULTAT
+				echo https://rarbg.unblockninja.com$REZULTAT
 		fi
 done
