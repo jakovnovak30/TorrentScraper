@@ -1,1 +1,2 @@
 # TorrentScraper
+- self explanitory
