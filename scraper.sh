@@ -56,9 +56,11 @@ function ettv(){
 	URL=${URL%?}
 	STRANICA=$(wget --user-agent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36 RuxitSynthetic/1.0 v9843529198 t38550 ath9b965f92 altpub cvcv=2' --no-parent -O - $URL)
 
-	for LINE in $STRANICA
+	STRANICA_OBRADENA="$(echo $STRANICA | grep -e "<div align='right'*")"	
+
+	for LINE in $STRANICA_OBRADENA
 		do
-			REZULTAT="$(echo $LINE | grep -Eo 'https:[a-zA-Z0-9#~.*,/!?=+&_%:-]*/torrent/[a-zA-Z0-9#~.*,/!?=+&_%:-]*')"
+			REZULTAT="$(echo $LINE | grep -Eo 'https://[a-zA-Z0-9#~.*,/!?=+&_%:-]*/torrent/[a-zA-Z0-9#~.*,/!?=+&_%:-]*')"
 			if [ ! -z $REZULTAT ]
 				then
 					echo $REZULTAT	
@@ -68,6 +70,6 @@ function ettv(){
 
 read -p "What would you like to pirate? " IME_TORENTA
 
-rarbg $IME_TORENTA
-1337x $IME_TORENTA
+#rarbg $IME_TORENTA
+#1337x $IME_TORENTA
 ettv $IME_TORENTA
