@@ -70,6 +70,6 @@ function ettv(){
 
 read -p "What would you like to pirate? " IME_TORENTA
 
-#rarbg $IME_TORENTA
-#1337x $IME_TORENTA
+rarbg $IME_TORENTA
+1337x $IME_TORENTA
 ettv $IME_TORENTA
